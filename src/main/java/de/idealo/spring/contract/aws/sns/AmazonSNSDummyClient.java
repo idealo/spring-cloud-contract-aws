@@ -60,6 +60,7 @@ public class AmazonSNSDummyClient extends AbstractAmazonSNS {
         try {
             return outbound.get(destination).poll(timeout, timeUnit);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             return null;
         }
     }
