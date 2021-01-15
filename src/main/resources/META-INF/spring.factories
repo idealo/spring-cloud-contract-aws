@@ -1,2 +1,3 @@
 org.springframework.test.context.ContextCustomizerFactory=\
-  de.idealo.spring.contract.aws.sns.SNSVerifierContextCustomizerFactory
+  de.idealo.spring.contract.aws.sns.SNSVerifierContextCustomizerFactory,\
+  de.idealo.spring.contract.aws.sqs.SQSVerifierContextCustomizerFactory
