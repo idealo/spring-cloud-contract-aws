@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -26,7 +27,7 @@ public class AmazonSNSDummyClient extends AbstractAmazonSNS {
 
     public AmazonSNSDummyClient(String[] topics) {
         this.outbound = Stream.of(topics)
-                .collect(Collectors.toMap(x -> x, x -> new LinkedBlockingDeque<>(), (x, y) -> x));
+                .collect(Collectors.toMap(x -> x, x -> new LinkedBlockingQueue<>(), (x, y) -> x));
     }
 
     @Override
